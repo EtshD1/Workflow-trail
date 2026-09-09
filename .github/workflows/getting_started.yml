@@ -13,3 +13,16 @@ jobs:
     steps:
       - name: Greet
         run: echo "Hello, world!"
+        
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: List files
+        run: ls -la
+        
+  second-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show file content
+        run: cat ./README.md
